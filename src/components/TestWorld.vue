@@ -1,13 +1,16 @@
 <template>
 <h1>TEST COMPONENT {{text}}</h1>
   <h3 v-for="item of items" v-bind:key="item.id">
-    {{item.text}} <button v-on:click="removeItem(item.id)">remove</button>
+    {{item.title}} <button v-on:click="removeItem(item.id)">remove</button>
   </h3>
 </template>
 
 <script>
 export default {
-  name: "Test",
+  name: "TestWorld",
+  unmounted() {
+    console.log("test unmounted")
+  },
   /*props:['text']*/
   props:{
     items:{
